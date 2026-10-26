@@ -349,8 +349,8 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
   <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
   <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path d="M3 3l18 18"/></svg>
 </button>
-<!-- PLACEHOLDER (M1): oud & santoor track goes at assets/audio/music-v2.mp3 -->
-<audio id="bgm" src="assets/audio/music-v2.mp3" loop preload="none"></audio>
+<!-- PLACEHOLDER (M1): oud & santoor track goes at assets/audio/music-v3.m4a -->
+<audio id="bgm" src="assets/audio/music-v3.m4a" loop preload="none"></audio>
 
 <main>
 
@@ -604,7 +604,7 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
     bgm.volume = 0;
     bgm.play().then(() => {
       musicBtn.classList.add('show');
-      let v = 0; const fade = setInterval(() => { v = Math.min(.5, v + .03); bgm.volume = v; if (v >= .5) clearInterval(fade); }, 120);
+      let v = 0; const fade = setInterval(() => { v = Math.min(.85, v + .05); bgm.volume = v; if (v >= .85) clearInterval(fade); }, 150);
     }).catch(() => {});  // no track yet, or blocked: stay silent
     setTimeout(() => { document.body.classList.remove('locked'); window.scrollTo(0, 0); }, 5200);
   }
